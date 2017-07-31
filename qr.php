@@ -4,12 +4,13 @@ $url = $_GET['url'];
 $id = hash("sha256", $url);
 $qrcache = "qrcodes";
 
-if (!mkdir($qrcache, 0755, true)) {
+if (!file_exists($qrcache) && !mkdir($qrcache, 0755, true)) {
     die('Could not create cache directory ' . $qrcache);
 }
 
 if(!file_exists("$qrcache/$id.png")){
-     exec("qrencode " . escapeshellarg($url) . " -o $qrcache/" . $id . ".png -t png");
+    exec("qrencode " . escapeshellarg($url) . " -o $qrcache/" . $id . ".png -t png");
+    file_put_contents("$qrcache/$id.txt", $url);
 }
 
 header('Content-type: image/png');
