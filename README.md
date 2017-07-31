@@ -13,3 +13,5 @@ You can embed a qr code on your website as followed:
     <img id="qrcode" src="/qr.php?url=https://hannover38.de/">
 
 The parameter url can actually be any string, not just urls.
+
+The string will be hashed and a file with the hash as filename will be generated inside the cache folder. The next time a qr code for this string is requested the cached file will then be used instead.
