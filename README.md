@@ -23,11 +23,13 @@ The parameter url can actually be any string, not just urls.
 
     <img src="/qr.php?url=This is my string. There are many like it, but this one is mine.">
 
-The string will be hashed and a file with the hash as filename will be generated inside the cache folder. The next time a qr code for this string is requested the cached file will then be used instead.
+The string will be hashed and a file with the hash as filename will be generated inside the cache folder. The next time a qr code for this string is requested the cached file will then be used instead. There will also be written a text file with the same hash and the string as content.
 
 Example cache:
 
-    -rw-r--r-- 1 www-data www-data 292 Jul 31 16:17 1e57a452a094728c291bc42bf2bc7eb8d9fd8844d1369da2bf728588b46c4e75.png
-    -rw-r--r-- 1 www-data www-data 476 Jul 28 17:15 311a4cf4226d3a0703f8c6ada50332b3e201806c700c195658f3f5da8b7552f6.png
-    -rw-r--r-- 1 www-data www-data 481 Jul 31 16:23 be62fa85b5f0f9e4d47bcfb0898aeb32568efe3920a0cf14f0e6c569ed2560e1.png
-    -rw-r--r-- 1 www-data www-data 410 Jul 31 15:32 dfe3f42987a21c843bb4fdc9b101811415597d9f6cca6ca99899c283bc6e5edf.png
+    -rw-r--r--  1 www-data www-data   61 Jul 31 22:00 d4abfb5bddc875fd63b73edd2583e728ccf0d8cacb237ba383da273159139e7d.txt
+    -rw-r--r--  1 www-data www-data  480 Jul 31 22:00 d4abfb5bddc875fd63b73edd2583e728ccf0d8cacb237ba383da273159139e7d.png
+    -rw-r--r--  1 www-data www-data   39 Jul 31 22:00 51ddda88dcd3d13bfc0531561ad44a3a81004fc34456560a21d33779c781f6eb.txt
+    -rw-r--r--  1 www-data www-data  407 Jul 31 22:00 51ddda88dcd3d13bfc0531561ad44a3a81004fc34456560a21d33779c781f6eb.png
+    -rw-r--r--  1 www-data www-data   56 Jul 31 22:00 7a24eb879602b56bee4cb0427a7c6216c3d39c7c4836d854e1763cea66ef2dad.txt
+    -rw-r--r--  1 www-data www-data  480 Jul 31 22:00 7a24eb879602b56bee4cb0427a7c6216c3d39c7c4836d854e1763cea66ef2dad.png
