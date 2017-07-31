@@ -2,7 +2,7 @@
 Tools and scripts for websites
 
 ## qr.php
-Requires qrencode
+Requires [qrencode](https://packages.debian.org/de/jessie/qrencode)
 
     sudo apt-get install qrencode
 
