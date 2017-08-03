@@ -6,24 +6,24 @@ Requires [qrencode](https://packages.debian.org/de/jessie/qrencode)
 
     sudo apt-get install qrencode
 
-Generates and caches qr codes. Place qr.php below your websites documentroot or in a subfolder. Creates a folder for the cached qr codes. Make sure it's allowed for the httpd user (e.g. www-data). 
+Generates and caches qr codes. Place qr.php below your websites documentroot or in a subfolder. Creates a folder for the cached qr codes. Make sure it's allowed for the httpd user (e.g. www-data) to create files and directories parallel to the qr.php script. 
 
-You can embed a qr code with a static text on your website as followed:
+Example of embedding a qr code with a static text on your website:
 
     <img src="/qr.php?url=https://hannover38.de/">
 
-Or you can use javascript to use the URL as string dynamically:
+Or you can use javascript to use the current URL as string:
 
     <img id="qrcode" src=""/>
     <script>
         document.getElementById("qrcode").src = "/qr.php?url=" + window.location.href;
     </script>
 
-The parameter url can actually be any string, not just urls.
+The parameter "url" can actually be any string, not just urls.
 
     <img src="/qr.php?url=This is my string. There are many like it, but this one is mine.">
 
-The string will be hashed and a file with the hash as filename will be generated inside the cache folder. The next time a qr code for this string is requested the cached file will then be used instead. There will also be written a text file with the same hash and the string as content.
+The string will be hashed and a file with the hash as filename will be generated inside the cache folder. The next time a qr code for a former string is requested the cached file will then be used. There will also be written a text file with the same hash as filename and the string as content.
 
 Example cache:
 
