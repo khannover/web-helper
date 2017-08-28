@@ -1,6 +1,6 @@
 <?php
 
-$url = $_GET['url'];
+$url = !empty($_GET['url']) ? $_GET['url'] : "No URL given";
 $id = hash("sha256", $url);
 $qrcache = "qrcodes";
 
